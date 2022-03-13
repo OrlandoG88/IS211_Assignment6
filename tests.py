@@ -5,59 +5,57 @@ from conversions_refactored import convert, ConversionNotPossible
 
 class Refactored_Conversions_Test(unittest.TestCase):
 
-    # test for converting celsius to kelvin
+
     def test_convert(self):
         self.assertEqual(convert('celsius', 'kelvin', 80.0), 353.15)
 
-    # test for converting celsius to fahrenheit
+
     def test_convert(self):
         self.assertEqual(convert('celsius', 'fahrenheit', 80.0), 176.0)
 
-    # test for converting fahrenheit to celsius
+
     def test_convert(self):
         self.assertEqual(convert('fahrenheit', 'celsius', 80.0), 26.67)
 
-    # test for converting fahrenheit to kelvin
+
     def test_convert(self):
         self.assertEqual(convert('fahrenheit', 'kelvin', 80.0), 29.82)
 
-    # test for converting kelvin to fahrenheit
+
     def test_convert(self):
         self.assertEqual(convert('kelvin', 'fahrenheit', 80.0), -315.67)
 
-    # test for converting kelvin to celsius
+
     def test_convert(self):
         self.assertEqual(convert('kelvin', 'celsius', 80.0), -193.15)
 
-    # test for converting miles to yards
+
     def test_convert(self):
         self.assertEqual(convert('miles', 'yards', 32.50),  57200)
 
-    # test for converting miles to meters
+
     def test_convert(self):
         self.assertEqual(convert('miles', 'meters', 16.25), 26151.77)
 
-    # test for converting yards to miles
+
     def test_convert(self):
         self.assertEqual(convert('yards', 'miles', 250.00), .14)
 
-    # test for converting yards to meters
+
     def test_convert(self):
         self.assertEqual(convert('yards', 'meters', 2917.00), 2667.30)
 
-    # test for converting meters to miles
+
     def test_convert(self):
         self.assertEqual(convert('meters', 'miles', 16517.50), 10.26)
 
-    # test for converting meters to yards
+
     def test_convert(self):
         self.assertEqual(convert('meters', 'yards', 6500.00), 7108.49)
 
-    # test for converting one unit to itself
     def test_convertSameFromToUnits(self):
         self.assertEqual(convert('meters', 'meters', 1800.95), 1800.95)
 
-    # test for raising an exception when inputs are incompatible units
     def test_convertIncompatibleUnits(self):
         self.assertRaises(ConversionNotPossible, convert, 'celsius', 'meters', 300)
 
